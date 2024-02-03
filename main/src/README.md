@@ -13,6 +13,7 @@ Join.js에서 sign up 버튼을 누르면 post 요청 -> server.js (/user/join �
 백엔드: handleConfirm 함수에서 if문은 password와 confirmPassword가 서로 일치하지 않으면 에러 메시지를 반환시킴. try 문에서는 await axios를 사용해 http://localhost:8080/user/join로 Post함. 내용은 설정한 아이디와 패스워드를 post한다. 이는 server.js에서 /user/join 부분에서 처리됨. 처리된 내용은 response로 받게 되고 response.data.authenticated가 1이라면 / 초기 페이지로 네이게이트함.</p>
 
 <hr/>
+
 <h2>User.js 파일 설명</h2>
 <p>User.js (Post 요청)->server.js (/user 컨트롤러 처리 시작)->sql.js (함수에 쓰이는 sql)-> server.js(다시 server.js로 돌아와서 처리 마무리 한 후 res.send로 결과 반환)->User.js (authenticated 처리 후 /maps 네비게이트)->Map.js
 
@@ -24,6 +25,7 @@ Join.js에서 sign up 버튼을 누르면 post 요청 -> server.js (/user/join �
 백엔드: handleConfirm 함수는 async 비동기로 선언된다. try catch 문 안에서 try 부분은 http://localhost:8080/user로 await axios를 사용해 username과 password를 각각 Mem_login_id와 Mem_login_pw로 post한다. http://localhost:8080/user는 server.js(컨트롤러) 부분에서 처리된다. 처리된 것은 response로 리턴되어 User.js에 나타난다. (response의 data의 authenticated가 만약 1이라면 localStorage.setItem으로 로컬에 저장하고 사용할 수 있으나 불필요) navigate로 /maps 이동 요청. /maps는 App.js에서 Map.js로 라우팅 되어 있음.</p>
 
 <hr/>
+
 <h2>Map.js 파일 설명</h2>
 
 <p>fetchParkingData 함수
@@ -43,7 +45,8 @@ setParkingData(dataObj)를 이용해 set해줌.
 
 </p>
 <hr/>
-## app.js 파일 설명
+
+# app.js
 
 ### 1. 임포트 섹션
 
@@ -70,7 +73,8 @@ App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할�
 `Paging` 컴포넌트는 동적 라우팅을 예시로 보여줍니다. 특정 주차 공간이나 건물을 클릭했을 때, 그에 해당하는 상세 페이지로 이동하는 기능을 구현할 수 있습니다. 이는 사용자가 애플리케이션 내에서 더욱 풍부한 인터랙션을 경험할 수 있게 해줍니다.
 
 <hr/>
-## `Jungseok` 컴포넌트 설명
+
+# Jungseok.js
 
 ### 기본 구조
 
@@ -110,7 +114,8 @@ App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할�
 이 컴포넌트는 주차장 관리 애플리케이션의 일부로 사용될 수 있으며, 사용자에게 주차 공간의 실시간 점유 상태를 보여주고, 최적의 주차 공간을 선택할 수 있는 인터페이스를 제공합니다.
 
 <hr/>
-## BuildTwo 컴포넌트 설명
+
+# BuildTwo 컴포넌트 설명
 
 ### 주요 라이브러리 및 훅 사용
 
@@ -150,7 +155,8 @@ App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할�
 이 컴포넌트는 React의 선언적 UI 패러다임과 함께 비동기 통신, 상태 관리, 조건부 렌더링 기법을 활용하여 복잡한 동적 인터페이스를 구현하는 좋은 예시입니다.
 
 <hr/>
-## App.js 파일 설명
+
+# App.js 파일 설명
 
 ### 1. MySQL 연결 설정
 
