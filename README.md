@@ -13,7 +13,9 @@ dataset : <https://public.roboflow.com/object-detection/pklot/1>
 2. YOLOv8 to extract the bounding box and confidence of the car object.
 3. When, IoU(Intersection of Unit) is over specific threshold, Car is parked.
 4. We used the Euclidean distance between those two center points.
-
+5. Easiest to Park : A parking space with many vacant spaces nearby (NorthSouthWestEast)
+6. Closest to Entrance : Euclidean distance betweent parking space and building entrance
+   * The entrance of the building was set arbitrarily
 ## run_jeongseok.py
 ![image](https://github.com/dongspam0209/ParkingGo/assets/98256216/d6e71fe1-4b18-41f8-948a-5cfecfc1b8e5)
 1. Import model and jeongseok_parkinglot videos and json of jeongseok_parkinglot.
