@@ -44,33 +44,6 @@ setParkingData(dataObj)를 이용해 set해줌.
 <Route path="/park/:clickedMarkerId" element={<Paging />} />에서 <Route path="/park/:1" element={<BuildTwo />} />가 되는 것임.
 
 </p>
-<hr/>
-
-# app.js
-
-### 1. 임포트 섹션
-
-- `import './App.css';` : 애플리케이션에 적용되는 스타일을 정의한 CSS 파일을 임포트합니다.
-- `import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';` : 리액트 라우터 돔을 통해 SPA(Single Page Application)의 라우팅을 관리합니다.
-- `import React from 'react';` : 리액트 코어 라이브러리를 임포트합니다..
-
-### 2. 컴포넌트 임포트
-
-각 페이지 및 기능에 해당하는 컴포넌트들(Maps, Jungseok, BuildTwo, User, Park, Join)을 임포트합니다.
-
-### 3. App 컴포넌트 및 라우팅 설정
-
-App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할을 합니다. `BrowserRouter`를 사용하여 라우팅을 설정합니다. `Routes`와 `Route`를 활용해 경로에 따른 컴포넌트 렌더링을 정의합니다. 예를 들어, 루트(`/`) 경로에서는 User 컴포넌트를, `/maps`에서는 Maps 컴포넌트를 렌더링합니다.
-
-### 4. 동적 라우팅 및 페이지 컴포넌트
-
-`Paging` 함수 컴포넌트는 URL 파라미터(`clickedMarkerId`)에 따라 동적으로 컴포넌트를 렌더링합니다. 예를 들어, `/park/1` 경로는 `BuildTwo` 컴포넌트를, `/park/3`은 `Jungseok` 컴포넌트를 렌더링합니다. `useParams` 훅을 사용하여 경로의 파라미터를 얻습니다. 이 값에 따라 조건부로 다른 컴포넌트를 반환합니다.
-
-### 작동 원리
-
-사용자가 웹 애플리케이션의 다양한 경로에 접근할 때, `BrowserRouter`가 해당 경로와 일치하는 `Route` 컴포넌트를 찾아 렌더링합니다. 이를 통해 사용자는 페이지를 전환할 수 있으며, 애플리케이션은 페이지를 새로고침하지 않고도 다양한 컨텐츠를 제공합니다.
-
-`Paging` 컴포넌트는 동적 라우팅을 예시로 보여줍니다. 특정 주차 공간이나 건물을 클릭했을 때, 그에 해당하는 상세 페이지로 이동하는 기능을 구현할 수 있습니다. 이는 사용자가 애플리케이션 내에서 더욱 풍부한 인터랙션을 경험할 수 있게 해줍니다.
 
 <hr/>
 
