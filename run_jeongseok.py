@@ -4,8 +4,8 @@ import cvzone
 import numpy as np
 from ultralytics import YOLO
 import json
-model = YOLO('C:\\Users\\VCL\\Desktop\\donghannah\\runs\\detect\\car13\\weights\\best.pt')
-cap = cv2.VideoCapture('testvideos\\230824_jeongseok.mp4')
+# model = YOLO('\\best.pt')  (write your model_path)
+# cap = cv2.VideoCapture('testvideos\\230824_jeongseok.mp4') (write your jeongseok.mp4_path)
 entry  = {
     "num2": {"X": 509, "Y": 767},
     "jeongseok" : {"X": 1417, "Y": 495}
@@ -17,7 +17,7 @@ def distance(p1, p2):
 # Replace the pickle load part with json load
 posList = []
 try:
-    with open('.\\0\\src\\230824_jeongseok.json', 'r') as f:  # Open the file in read mode
+    # with open('.\\main\\src\\230824_jeongseok.json', 'r') as f:  # Open the file in read mode  (write your jeonseok.json_path)
         posList = json.load(f)['parking_status']  # Access the 'parking_status' key
 except FileNotFoundError:
     print("File not found, creating a new list")
@@ -168,7 +168,7 @@ while True:
 
     parking_statuses = checkSpaces(centers)
     parking_data = {'parking_status': posList}
-    with open('C:\\Users\\VCL\\Desktop\\donghannah\\0\\src\\230824_jeongseok.json', 'w') as file:
+    with open('main\\src\\230824_jeongseok.json', 'w') as file:  # (write your jeonseok.json_path)
         json.dump(parking_data, file, indent=4)  # Save with indentation
 
     
