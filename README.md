@@ -16,4 +16,6 @@ dataset : <https://public.roboflow.com/object-detection/pklot/1>
 ## parkingspacepicker.py
 
 ## mapmatching.py
-precise map matching
+Align rotated image by using YOLOv8 and SIFT. Masking bounding boxes which are detected by YOLOv8 and then, use SIFT algorithm. 
+
+![image](https://github.com/dongspam0209/ParkingGo/assets/98256216/a82a5ea9-a64f-4394-ba5a-456d61d2d817) ![image](https://github.com/dongspam0209/ParkingGo/assets/98256216/55025746-6955-486a-9cc4-68b463656cca)
