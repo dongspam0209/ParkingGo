@@ -13,6 +13,7 @@ Join.js에서 sign up 버튼을 누르면 post 요청 -> server.js (/user/join �
 백엔드: handleConfirm 함수에서 if문은 password와 confirmPassword가 서로 일치하지 않으면 에러 메시지를 반환시킴. try 문에서는 await axios를 사용해 http://localhost:8080/user/join로 Post함. 내용은 설정한 아이디와 패스워드를 post한다. 이는 server.js에서 /user/join 부분에서 처리됨. 처리된 내용은 response로 받게 되고 response.data.authenticated가 1이라면 / 초기 페이지로 네이게이트함.</p>
 
 <hr/>
+
 <h2>User.js 파일 설명</h2>
 <p>User.js (Post 요청)->server.js (/user 컨트롤러 처리 시작)->sql.js (함수에 쓰이는 sql)-> server.js(다시 server.js로 돌아와서 처리 마무리 한 후 res.send로 결과 반환)->User.js (authenticated 처리 후 /maps 네비게이트)->Map.js
 
@@ -24,6 +25,7 @@ Join.js에서 sign up 버튼을 누르면 post 요청 -> server.js (/user/join �
 백엔드: handleConfirm 함수는 async 비동기로 선언된다. try catch 문 안에서 try 부분은 http://localhost:8080/user로 await axios를 사용해 username과 password를 각각 Mem_login_id와 Mem_login_pw로 post한다. http://localhost:8080/user는 server.js(컨트롤러) 부분에서 처리된다. 처리된 것은 response로 리턴되어 User.js에 나타난다. (response의 data의 authenticated가 만약 1이라면 localStorage.setItem으로 로컬에 저장하고 사용할 수 있으나 불필요) navigate로 /maps 이동 요청. /maps는 App.js에서 Map.js로 라우팅 되어 있음.</p>
 
 <hr/>
+
 <h2>Map.js 파일 설명</h2>
 
 <p>fetchParkingData 함수
@@ -42,35 +44,10 @@ setParkingData(dataObj)를 이용해 set해줌.
 <Route path="/park/:clickedMarkerId" element={<Paging />} />에서 <Route path="/park/:1" element={<BuildTwo />} />가 되는 것임.
 
 </p>
-<hr/>
-## app.js 파일 설명
-
-### 1. 임포트 섹션
-
-- `import './App.css';` : 애플리케이션에 적용되는 스타일을 정의한 CSS 파일을 임포트합니다.
-- `import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';` : 리액트 라우터 돔을 통해 SPA(Single Page Application)의 라우팅을 관리합니다.
-- `import React from 'react';` : 리액트 코어 라이브러리를 임포트합니다.
-
-### 2. 컴포넌트 임포트
-
-각 페이지 및 기능에 해당하는 컴포넌트들(Maps, Jungseok, BuildTwo, User, Park, Join)을 임포트합니다.
-
-### 3. App 컴포넌트 및 라우팅 설정
-
-App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할을 합니다. `BrowserRouter`를 사용하여 라우팅을 설정합니다. `Routes`와 `Route`를 활용해 경로에 따른 컴포넌트 렌더링을 정의합니다. 예를 들어, 루트(`/`) 경로에서는 User 컴포넌트를, `/maps`에서는 Maps 컴포넌트를 렌더링합니다.
-
-### 4. 동적 라우팅 및 페이지 컴포넌트
-
-`Paging` 함수 컴포넌트는 URL 파라미터(`clickedMarkerId`)에 따라 동적으로 컴포넌트를 렌더링합니다. 예를 들어, `/park/1` 경로는 `BuildTwo` 컴포넌트를, `/park/3`은 `Jungseok` 컴포넌트를 렌더링합니다. `useParams` 훅을 사용하여 경로의 파라미터를 얻습니다. 이 값에 따라 조건부로 다른 컴포넌트를 반환합니다.
-
-### 작동 원리
-
-사용자가 웹 애플리케이션의 다양한 경로에 접근할 때, `BrowserRouter`가 해당 경로와 일치하는 `Route` 컴포넌트를 찾아 렌더링합니다. 이를 통해 사용자는 페이지를 전환할 수 있으며, 애플리케이션은 페이지를 새로고침하지 않고도 다양한 컨텐츠를 제공합니다.
-
-`Paging` 컴포넌트는 동적 라우팅을 예시로 보여줍니다. 특정 주차 공간이나 건물을 클릭했을 때, 그에 해당하는 상세 페이지로 이동하는 기능을 구현할 수 있습니다. 이는 사용자가 애플리케이션 내에서 더욱 풍부한 인터랙션을 경험할 수 있게 해줍니다.
 
 <hr/>
-## `Jungseok` 컴포넌트 설명
+
+# Jungseok.js
 
 ### 기본 구조
 
@@ -110,7 +87,8 @@ App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할�
 이 컴포넌트는 주차장 관리 애플리케이션의 일부로 사용될 수 있으며, 사용자에게 주차 공간의 실시간 점유 상태를 보여주고, 최적의 주차 공간을 선택할 수 있는 인터페이스를 제공합니다.
 
 <hr/>
-## BuildTwo 컴포넌트 설명
+
+# BuildTwo 컴포넌트 설명
 
 ### 주요 라이브러리 및 훅 사용
 
@@ -150,7 +128,8 @@ App 함수형 컴포넌트는 애플리케이션의 메인 컴포넌트 역할�
 이 컴포넌트는 React의 선언적 UI 패러다임과 함께 비동기 통신, 상태 관리, 조건부 렌더링 기법을 활용하여 복잡한 동적 인터페이스를 구현하는 좋은 예시입니다.
 
 <hr/>
-## App.js 파일 설명
+
+# App.js 파일 설명
 
 ### 1. MySQL 연결 설정
 
