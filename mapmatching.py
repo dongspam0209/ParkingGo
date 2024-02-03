@@ -3,7 +3,7 @@ import numpy as np
 from ultralytics import YOLO
 
 # Load YOLO model (Replace with the correct path to your YOLOv8 model)
-model = YOLO('C:\\Users\\VCL\\Desktop\\donghannah\\runs\\detect\\car13\\weights\\best.pt')
+#model = YOLO('사용자 경로 입력\\runs\\detect\\car13\\weights\\best.pt')
 
 # Read and preprocess images
 dst_img = cv2.imread('.\\testvideos\\original.jpg')
