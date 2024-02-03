@@ -10,9 +10,9 @@ if __name__ == '__main__':
     # Load the model.
     model = YOLO('yolov8n.pt')
     
-    # Training.
+    # Training. write your own dataset directory
     results = model.train(
-    data='C:/Users/VCL/Desktop/d0ng1nah/datasets/data.yaml',
+    data='/datasets/data.yaml',
     imgsz=640,
     epochs=130,
     batch=3,

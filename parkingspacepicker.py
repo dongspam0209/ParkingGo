@@ -10,7 +10,7 @@ def euclidean_distance(point1, point2):
     return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
 
 try:
-    with open('./map/num2.json', 'r') as f:  # Open the file in read mode
+    with open('./main/src/num2.json', 'r') as f:  # read json file (num2.json or 230824_jeongseok.json)
         data = json.load(f)
         shapes = data['parking_status']  # Assuming the JSON structure you provided
 except FileNotFoundError:
