@@ -52,7 +52,7 @@ setParkingData(dataObj)를 이용해 set해줌.
 
 - `import './App.css';` : 애플리케이션에 적용되는 스타일을 정의한 CSS 파일을 임포트합니다.
 - `import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';` : 리액트 라우터 돔을 통해 SPA(Single Page Application)의 라우팅을 관리합니다.
-- `import React from 'react';` : 리액트 코어 라이브러리를 임포트합니다.
+- `import React from 'react';` : 리액트 코어 라이브러리를 임포트합니다..
 
 ### 2. 컴포넌트 임포트
 
